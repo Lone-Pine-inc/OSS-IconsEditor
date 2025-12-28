@@ -1,73 +1,56 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<AssemblyName>modeliconeditor.unittest</AssemblyName>
 		<PackageId>modeliconeditor.unittest</PackageId>
-		<LangVersion>13</LangVersion>
+		<LangVersion>14</LangVersion>
 		<NoWarn>1701;1702;1591;</NoWarn>
 		<WarningsAsErrors></WarningsAsErrors>
 		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<DefineConstants>SANDBOX;ADDON;DEBUG</DefineConstants>
 		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+		<OutputPath>C:\program files (x86)\steam\steamapps\common\sbox/.vs/output/</OutputPath>
+		<DocumentationFile>C:\program files (x86)\steam\steamapps\common\sbox/.vs/output/modeliconeditor.unittest.xml</DocumentationFile>
+		<RootNamespace>Sandbox</RootNamespace>
+		<Nullable>disable</Nullable>
 		<IsTestProject>true</IsTestProject>
-
-		<DesignTimeBuild Condition="'$(DesignTimeBuild)' == 'true'">true</DesignTimeBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
-		
-		<CompilerVisibleProperty Include="DesignTimeBuild" />
-		<None Update="**\*.cs.scss" DependentUpon="%(Filename)" />
-		<Compile Update="**\*.razor.cs" DependentUpon="%(Filename)" />
-		<None Update="**\*.razor.scss" DependentUpon="%(Filename)" />
-
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" /> 
+		<PackageReference Include="MSTest.TestAdapter" Version="3.1.1" /> 
+		<PackageReference Include="MSTest.TestFramework" Version="3.1.1" /> 
+		<PackageReference Include="coverlet.collector" Version="6.0.0" /> 
 	</ItemGroup>
-
-	<ItemGroup>
-		<AdditionalFiles Include="**/*.razor" />
-	</ItemGroup>
-<ItemGroup>
-	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-	<PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
-	<PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
-	<PackageReference Include="coverlet.collector" Version="6.0.0" />
-</ItemGroup>
-
 
 	<ItemGroup>
 		<Using Include="Sandbox.Internal.GlobalToolsNamespace" Static="true" />
 		<Using Include="Sandbox.Internal.GlobalGameNamespace" Static="true" />
 	</ItemGroup>
 
-  <PropertyGroup>
-	<OutputPath>C:\Program Files (x86)\Steam\steamapps\common\sbox/.vs/output/</OutputPath>
-	<DocumentationFile>C:\Program Files (x86)\Steam\steamapps\common\sbox/.vs/output/modeliconeditor.unittest.xml</DocumentationFile>
-	<RootNamespace>Sandbox</RootNamespace>
-	<Nullable>disable</Nullable>
-  </PropertyGroup>
-
 	<ItemGroup>
-		<Analyzer Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.CodeUpgrader.dll"/>
-		<Analyzer Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed\Sandbox.Generator.dll" Condition="$(DesignTimeBuild) != 'true'"/>
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.System.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Engine.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Filesystem.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Game.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Reflection.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Tools.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Compiling.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Microsoft.CodeAnalysis.dll" />
-		<Reference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\bin\managed/Sandbox.Bind.dll" />
+		<Analyzer Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.CodeUpgrader.dll"/> 
+		<Analyzer Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Generator.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.System.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Engine.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Filesystem.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Reflection.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Mounting.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Microsoft.AspNetCore.Components.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Tools.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Compiling.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Microsoft.CodeAnalysis.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Microsoft.CodeAnalysis.CSharp.dll"/> 
+		<Reference Include="C:\program files (x86)\steam\steamapps\common\sbox\bin\managed\Sandbox.Bind.dll"/> 
 	</ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
 		<ProjectReference Include="C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\tools\Code\Base Editor Library.csproj" />
-		<ProjectReference Include="C:\Users\susan\Documents\GitHub\SLonePineRP\Libraries\ModelIconEditor\Code\modeliconeditor.csproj" />
-		<ProjectReference Include="C:\Users\susan\Documents\GitHub\SLonePineRP\Libraries\ModelIconEditor\Editor\modeliconeditor.editor.csproj" />
-
-  </ItemGroup>
+		<ProjectReference Include="C:\Users\Lecoo\Documents\GitHub\OSS-IconsEditor\Code\modeliconeditor.csproj" />
+		<ProjectReference Include="C:\Users\Lecoo\Documents\GitHub\OSS-IconsEditor\Editor\modeliconeditor.editor.csproj" />
+	</ItemGroup>
 
 </Project>
