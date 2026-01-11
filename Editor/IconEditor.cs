@@ -242,7 +242,7 @@ public class ModelIconGenerator : Widget
         savePanel.Layout.Add(new Label("Output Path:", this));
         _outputPathEdit = savePanel.Layout.Add(new LineEdit(this));
         _outputPathEdit.PlaceholderText = "ui/icons/model_icon.png";
-        _outputPathEdit.Text = "ui/icons/model_icon.png";
+        _outputPathEdit.Text = "Assets/ui/icons/model_icon.png";
 
         savePanel.Layout.AddStretchCell();
 
